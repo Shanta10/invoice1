@@ -1,6 +1,7 @@
 package com.example.demo.controller
 
 import com.example.demo.model.Invoice
+import com.example.demo.model.InvoiceView
 import com.example.demo.service.InvoiceService
 import jakarta.validation.Valid
 import org.springframework.beans.factory.annotation.Autowired
@@ -17,6 +18,10 @@ class InvoiceController {
     @GetMapping
     fun list ():List <Invoice>{
         return invoiceService.list()
+    }
+    @GetMapping("/view")
+    fun listview ():List <InvoiceView>{
+        return invoiceService.listview()
     }
     @PostMapping
     fun save (@RequestBody @Valid invoice: Invoice):ResponseEntity<Invoice>{

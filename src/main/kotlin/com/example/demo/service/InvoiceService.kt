@@ -2,8 +2,10 @@ package com.example.demo.service
 
 import com.example.demo.model.Client
 import com.example.demo.model.Invoice
+import com.example.demo.model.InvoiceView
 import com.example.demo.repository.ClientRepository
 import com.example.demo.repository.InvoiceRepository
+import com.example.demo.repository.InvoiceViewRepository
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.HttpStatus
 import org.springframework.stereotype.Service
@@ -15,8 +17,13 @@ class InvoiceService {
     lateinit var clientRepository: ClientRepository
     @Autowired
     lateinit var invoiceRepository: InvoiceRepository
+    @Autowired
+    lateinit var invoiceViewRepository: InvoiceViewRepository
     fun list ():List<Invoice>{
         return invoiceRepository.findAll()
+    }
+    fun listview ():List<InvoiceView>{
+        return invoiceViewRepository.findAll()
     }
     fun save(invoice: Invoice): Invoice {
         try {
