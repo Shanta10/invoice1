@@ -3,6 +3,10 @@ package com.example.demo.service
 import com.example.demo.model.Client
 import com.example.demo.repository.ClientRepository
 import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.data.domain.Example
+import org.springframework.data.domain.ExampleMatcher
+import org.springframework.data.domain.Page
+import org.springframework.data.domain.Pageable
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.stereotype.Service
@@ -14,6 +18,13 @@ import org.springframework.web.server.ResponseStatusException
 class ClientService {
     @Autowired
     lateinit var clientRepository: ClientRepository
+
+   /* fun list (pageable: Pageable, client: Client): Page<Client> {
+        val matcher = ExampleMatcher.matching()
+            .withIgnoreNullValues()
+            .withMatcher(("fullname"), ExampleMatcher.GenericPropertyMatchers.contains().ignoreCase())
+        return clientRepository.findAll(Example.of(client, matcher), pageable)
+    }*/
 
     fun list ():List<Client>{
         return clientRepository.findAll()

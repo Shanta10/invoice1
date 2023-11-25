@@ -2,6 +2,7 @@ package com.example.demo.model
 
 import jakarta.persistence.*
 import jakarta.validation.constraints.NotBlank
+import jakarta.validation.constraints.NotNull
 
 @Entity
 @Table(name = "product")
@@ -14,8 +15,8 @@ class Product {
     var description: String? = null
     @NotBlank(message="Campo obligatorio") //validate
     var brand: String? = null
-    @NotBlank(message="Campo obligatorio") //validate
+    @NotNull(message="Campo obligatorio") //validate
     var price: Int? = null
-    @NotBlank(message="Campo obligatorio") //validate
+    @NotNull(message="Campo obligatorio") //validate
     var stock: Int? = null
 }
