@@ -11,7 +11,7 @@ CREATE TABLE IF NOT EXISTS invoice (
     code VARCHAR(255) NOT NULL,
     create_at DATE NOT NULL,
     total VARCHAR(20) NOT NULL,
-    client_id INT NOT NULL, -- Se agrega la columna client_id
+    client_id INT NOT NULL,
     PRIMARY KEY (id),
     FOREIGN KEY (client_id) REFERENCES client(id)
     );

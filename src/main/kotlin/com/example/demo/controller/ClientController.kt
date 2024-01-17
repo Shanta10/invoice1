@@ -15,17 +15,14 @@ class ClientController {
     @Autowired
     lateinit var clientService: ClientService
 
-    /*@GetMapping
+    @GetMapping
     fun list (client: Client, pageable: Pageable):ResponseEntity<*>{
         val response= clientService.list(pageable,client)
         return ResponseEntity(response, HttpStatus.OK)
-    }*/
+    }
 
     //@RequestParam searchValue:String
-    @GetMapping
-    fun list ():List <Client>{
-        return clientService.list()
-    }
+
     @PostMapping
     fun save (@RequestBody @Valid client: Client):ResponseEntity<Client>{
         return ResponseEntity(clientService.save(client), HttpStatus.OK)

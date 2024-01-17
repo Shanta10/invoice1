@@ -19,6 +19,10 @@ class InvoiceController {
     fun list ():List <Invoice>{
         return invoiceService.list()
     }
+    @GetMapping("/filter-total/{value}")
+    fun listTotals (@PathVariable("value") value: Double ):ResponseEntity<*>{
+        return ResponseEntity(invoiceService.filterTotal(value), HttpStatus.OK)
+    }
     @GetMapping("/view")
     fun listview ():List <InvoiceView>{
         return invoiceService.listview()

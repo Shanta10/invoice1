@@ -27,9 +27,9 @@ class DetailController {
     fun update (@RequestBody detail: Detail):ResponseEntity<Detail>{
         return ResponseEntity(detailService.update(detail), HttpStatus.OK)
     }
-    @PatchMapping
-    /*fun updateName (@RequestBody detail: Detail):ResponseEntity<Detail>{
-        return ResponseEntity(detailService.updateName(detail), HttpStatus.OK)
+    /*@PatchMapping
+    fun updateName (@RequestBody detail: Detail):ResponseEntity<Detail>{
+        return ResponseEntity(detailService.quantity(detail), HttpStatus.OK)
     }*/
     @GetMapping("/{id}")
     fun listById (@PathVariable("id") id: Long): ResponseEntity<*>{

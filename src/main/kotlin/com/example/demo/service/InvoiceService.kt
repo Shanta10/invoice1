@@ -22,6 +22,9 @@ class InvoiceService {
     fun list ():List<Invoice>{
         return invoiceRepository.findAll()
     }
+    fun filterTotal (value: Double):List<Invoice>{
+        return invoiceRepository.filterTotal(value)
+    }
     fun listview ():List<InvoiceView>{
         return invoiceViewRepository.findAll()
     }
